@@ -6,14 +6,13 @@ import java.util.Random;
 
 import org.junit.Test;
 
-import unal.datastructures.LinearListImproved;
-import unal.datastructures.SimulatedPointerArrayLinearList;
+import unal.datastructures.DoubleLinkedList;
 
-public class Point1 {
-
+public class Point2 {
+	
 	@Test
 	public void addTest() {
-		SimulatedPointerArrayLinearList<Integer> list = new SimulatedPointerArrayLinearList<>();
+		DoubleLinkedList<Integer> list = new DoubleLinkedList<>();
 		int n = 50;
 		
 		Random r = new Random();
@@ -49,41 +48,10 @@ public class Point1 {
 		
 	}
 	
-	@Test
-	public void saveAndLoad(){
-		LinearListImproved<Integer> list = new SimulatedPointerArrayLinearList<>();
-		for(int i=0; i<10; i++)
-			list.add(0, i);
-		
-		list.save("plz");
-		LinearListImproved<Integer> list2 = new SimulatedPointerArrayLinearList<>();
-		list.load("plz");
-		
-		if( list.size() != list2.size() ) fail("Different size when loading a saved list");
-		for(int i=0; i<10; i++){
-			if (list.get(i) != list2.get(i))
-				fail("Different element when comparing loaded and saved");
-		}
-	}
-	
-	@Test
-	public void sort(){
-		LinearListImproved<Integer> list = new SimulatedPointerArrayLinearList<>();
-		for(int i=0; i<10; i++)
-			list.add(0, i);
-		
-		list.sort();
-		list.add(list.size(), 9);
-		for (int i = 0; i < 10; i++) {
-			if( list.get(i) != i ) fail("Failed sorting");
-		}
-		
-		if( list.get(list.size()-1) != 9 ) fail("Failed sorting");
-	}
 	
 	@Test
 	public void delete() {
-		SimulatedPointerArrayLinearList<Integer> list = new SimulatedPointerArrayLinearList<>();
+		DoubleLinkedList<Integer> list = new DoubleLinkedList<>();
 		int n = 50;
 		for (int i = 0; i < n; i++) {
 			list.add(list.size(),i);
@@ -103,11 +71,9 @@ public class Point1 {
 		}
 	}
 	
-	
-	
 	@Test
 	public void indexing() {
-		SimulatedPointerArrayLinearList<Integer> list = new SimulatedPointerArrayLinearList<>();
+		DoubleLinkedList<Integer> list = new DoubleLinkedList<>();
 		int n = 50;
 		for (int i = 0; i < n; i++) {
 			list.add(list.size(),i);
@@ -121,5 +87,6 @@ public class Point1 {
 		
 		if( list.indexOf(777) != 0 ) fail("did not search quite good");
 	}
+
 
 }
