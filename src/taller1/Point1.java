@@ -68,12 +68,14 @@ public class Point1 {
 	
 	@Test
 	public void sort(){
-		LinearListImproved<Integer> list = new SimulatedPointerArrayLinearList<>();
+		SimulatedPointerArrayLinearList<Integer> list = new SimulatedPointerArrayLinearList<>();
 		for(int i=0; i<10; i++)
 			list.add(0, i);
 		
+		
+		list.add(0, 9);
 		list.sort();
-		list.add(list.size(), 9);
+		
 		for (int i = 0; i < 10; i++) {
 			if( list.get(i) != i ) fail("Failed sorting");
 		}

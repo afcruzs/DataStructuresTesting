@@ -42,14 +42,16 @@ public class Point3 {
 	@Test
 	public void maxElement() {
 		ChainTaller1<Integer> list = buildList();
-		if( list.maxElement() != 44 );
-			fail("Bad Max Element");
+		list.add(list.size(), 30564);
+		int max = list.maxElement();
+		if( max != 30564 )
+			fail("Bad Max Element " + list.maxElement() );
 	}
 	
 	@Test
 	public void minElement() {
 		ChainTaller1<Integer> list = buildList();
-		if( list.minElement() != 0 );
+		if( list.minElement() != 0 )
 			fail("Bad Min Element");
 	}
 	
@@ -127,7 +129,12 @@ public class Point3 {
 		goodList.add(goodList.size(), 4);
 		goodList.add(goodList.size(), 8);
 		
+		
+		
 		if( goodList.size() != L.size() ) fail("Bad list copy");
+		for(int i=0; i<goodList.size(); i++)
+			if( !goodList.get(i).equals(L.get(i)) )
+				fail("Bad list copy");
 		
 		ChainTaller1<Integer> list1 = new ChainTaller1<>();
 		ChainTaller1<Integer> list2 = new ChainTaller1<>();
@@ -144,7 +151,8 @@ public class Point3 {
 		list2.add(0, 3000);
 		list2.add(0, 3001);
 		
-		list1.listCopy(6, list2, 2, list2.size()-2);
+		list1.listCopy(6, list2, 2, list2.size()-4);
+		
 		for(int i=0; i<=20; i++)
 			if(list1.get(i) != i)
 				fail("Bad list copy");
@@ -155,6 +163,12 @@ public class Point3 {
 		ChainTaller1<Integer> list = new ChainTaller1<>();
 		for (int i = 0; i < 10; i++) {
 			list.add(list.size(), i);
+		}
+		
+		list.rotate(0);
+		for (int i = 0; i < 10; i++) {
+			if(list.get(i)!=i)
+				fail("Fail zero rotation");
 		}
 		
 		list.rotate(2);
