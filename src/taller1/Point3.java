@@ -42,17 +42,35 @@ public class Point3 {
 	@Test
 	public void maxElement() {
 		ChainTaller1<Integer> list = buildList();
+		removeStuff(list);
 		list.add(list.size(), 30564);
 		int max = list.maxElement();
 		if( max != 30564 )
 			fail("Bad Max Element " + list.maxElement() );
+		
+		ChainTaller1<Character> list2 = new ChainTaller1<>();
+		list2.add(0, 'a');
+		list2.add(0, 'b');
+		list2.add(0, 'c');
+		
+		if( !list2.maxElement().equals('c') )
+			fail("did not work on character");
 	}
 	
 	@Test
 	public void minElement() {
 		ChainTaller1<Integer> list = buildList();
+		removeStuff(list);
 		if( list.minElement() != 0 )
 			fail("Bad Min Element");
+		
+		ChainTaller1<Character> list2 = new ChainTaller1<>();
+		list2.add(0, 'a');
+		list2.add(0, 'b');
+		list2.add(0, 'c');
+		
+		if( !list2.minElement().equals('a') )
+			fail("did not work on character");
 	}
 	
 	@Test
@@ -72,7 +90,7 @@ public class Point3 {
 	public void reverse(){
 		ChainTaller1<Integer> xd = new ChainTaller1<>();
 		for (int i = 0; i < 20; i++) {
-			xd.add(0, i);
+			xd.add(0, i); 
 		}
 		
 		xd.reverse();

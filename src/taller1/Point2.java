@@ -1,6 +1,6 @@
 package taller1;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.fail;
 
 import java.util.Random;
 
@@ -8,11 +8,13 @@ import org.junit.Test;
 
 import unal.datastructures.DoubleLinkedList;
 
+
 public class Point2 {
 	
 	@Test
 	public void addTest() {
-		DoubleLinkedList<Integer> list = new DoubleLinkedList<>();
+		DoubleLinkedList<Integer> list = new DoubleLinkedList<Integer>();
+		
 		int n = 50;
 		
 		Random r = new Random();

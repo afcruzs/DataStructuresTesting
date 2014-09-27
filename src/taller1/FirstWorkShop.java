@@ -6,6 +6,4 @@ import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
 @SuiteClasses({ Point1.class, Point2.class, Point3.class })
-public class FirstWorkShop {
-
-}
+public class FirstWorkShop {}

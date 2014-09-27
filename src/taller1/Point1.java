@@ -23,6 +23,11 @@ public class Point1 {
 		
 		for (int i = 0; i <= n; i++) {
 			if( i != list.get(i) )
+				System.out.println(list.get(i));
+		}
+		
+		for (int i = 0; i <= n; i++) {
+			if( i != list.get(i) )
 				fail("Failed adding at zero");
 		}
 		
@@ -51,13 +56,13 @@ public class Point1 {
 	
 	@Test
 	public void saveAndLoad(){
-		LinearListImproved<Integer> list = new SimulatedPointerArrayLinearList<>();
+		LinearListImproved<Integer> list = new SimulatedPointerArrayLinearList<Integer>();
 		for(int i=0; i<10; i++)
 			list.add(0, i);
 		
-		list.save("plz");
-		LinearListImproved<Integer> list2 = new SimulatedPointerArrayLinearList<>();
-		list.load("plz");
+		list.save("plz2");
+		LinearListImproved<Integer> list2 = new SimulatedPointerArrayLinearList<Integer>();
+		list.load("plz2");
 		
 		if( list.size() != list2.size() ) fail("Different size when loading a saved list");
 		for(int i=0; i<10; i++){

@@ -71,7 +71,7 @@ public class ArrayLinearListImproved
    /** test program */
    public static void main( String[] args )
    {
-      Random r = new Random( new Date( ).getTime( ) );
+     /* Random r = new Random( new Date( ).getTime( ) );
 
       ArrayLinearListImproved<Student> x =
          new ArrayLinearListImproved<>( );
@@ -97,11 +97,11 @@ public class ArrayLinearListImproved
       x.save( "x.dat" );
       y.load( "x.dat" );
       for( Student s : y ) System.out.println( s );
-      System.out.println( y.indexOf( new Student( 333 ) ) );
+      System.out.println( y.indexOf( new Student( 333 ) ) );*/
    }
 }
 
-class Student implements Serializable, Comparable<Student>
+/*class Student implements Serializable, Comparable<Student>
 {
    private int code;
    private String name;
@@ -186,4 +186,4 @@ class Student implements Serializable, Comparable<Student>
          return -1 * ( a.code - b.code );
       }
    }
-}
+}*/
