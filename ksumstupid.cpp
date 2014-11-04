@@ -16,9 +16,9 @@ int main(){
     cin >> n;
     while(n--){
         cin >> m >> k;
-        int a[m];
-        int b[m];
-        int c[m*m];
+        int* a = new int[m];
+        int* b = new int[m];
+        int* c = new int[m*m];
 
         for(int i=0; i<m; i++)
             cin >> a[i];
@@ -34,5 +34,12 @@ int main(){
         /*for(int i=0; i<m*m; i++)
                 cout << i << " " << c[i] << endl;*/
         cout << c[k] << endl;
+
+        delete a;
+        a = NULL;
+        delete b;
+        b = NULL;
+        delete c;
+        c = NULL;
     }
 }

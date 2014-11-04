@@ -54,8 +54,9 @@ public class Point3 {
 				for (int j = 0; j < m; j++) {
 					b.add(b.size(), Integer.parseInt(lel[j]));
 				}
-				//System.out.println(a);
-				//System.out.println(b);
+				/*System.out.println(a);
+				System.out.println(b);
+				System.out.println(k);*/
 				KSumPair ksum = new KSumPair();
 				int theAns = Integer.parseInt(inAns.readLine());
 				if( ksum.solve(a, b, k) != theAns )
