@@ -1,6 +1,6 @@
 /** linked binary trees */
 
-package unal.datastructures;
+package unal.datastructures.taller2;
 
 import java.lang.reflect.*;
 
@@ -141,7 +141,6 @@ public class LinkedBinaryTree<T> implements BinaryTree<T>
    {
       if( t != null )
       {
-    	  
          theInOrder( t.leftChild ); // do left subtree
          try
          {

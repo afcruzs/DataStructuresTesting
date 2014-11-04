@@ -1,6 +1,6 @@
 /** max heap */
 
-package unal.datastructures;
+package unal.datastructures.taller2;
 
 import java.util.*;
 
