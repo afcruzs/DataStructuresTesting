@@ -166,6 +166,7 @@ public class Point1 {
 		tree.inOrderOutput();
 		System.out.println();
 		linkedTree.inOrderOutput();
+		
 	}
 	
 	@Test
@@ -228,7 +229,7 @@ public class Point1 {
 		b.makeTree('b', d, dummy);
 		a.makeTree('a', b, c);
 		
-		a.levelOrderOutput();
+	//	a.levelOrderOutput();
 		if( a.diameter() != 11 )
 			fail();
 		

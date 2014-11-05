@@ -6,6 +6,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 
@@ -58,13 +59,14 @@ public class Point3 {
 				System.out.println(b);
 				System.out.println(k);*/
 				KSumPair ksum = new KSumPair();
+				//MyKsumPair ksum = new MyKsumPair();
 				int theAns = Integer.parseInt(inAns.readLine());
 				if( ksum.solve(a, b, k) != theAns )
 				//if( KSumPair.solve(a, b, k) != theAns )
 					fail(ksum.solve(a, b, k)+" " +theAns);
 				in.readLine();
 			}
-		}catch(Exception e){
+		}catch(IOException e){
 			e.printStackTrace();
 		}
 	}
